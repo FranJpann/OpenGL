@@ -11,6 +11,13 @@ extern GLfloat yrot;
 GLvoid Modelisation()
 {
   VM_init();
+  
+  glBegin(GL_QUADS);
+    glVertex3f(-2, -2, 0);
+    glVertex3f(2, -2, 0);
+    glVertex3f(2, 2, 0);
+    glVertex3f(-2, 2, 0);
+  glEnd();
 
   
   
