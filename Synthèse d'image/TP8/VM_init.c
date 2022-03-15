@@ -1,4 +1,4 @@
-GLfloat z = -5;
+GLfloat z = -8;
 GLfloat xrot = 0.0;
 GLfloat yrot = 0.0;
 
