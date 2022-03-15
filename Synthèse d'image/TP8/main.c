@@ -45,11 +45,11 @@ GLvoid Modelisation()
   glFrontFace(GL_CCW);
   glDisable(GL_BLEND);
   glTranslatef(0.5, 0, 0);
-  glColor3f(1, 0, 1);
+  glColor4f(1, 0, 1, 1);
   glutSolidSphere(0.25, 30, 30);
 
   glTranslatef(-1, 0, 0);
-  glColor3f(1, 0, 0);
+  glColor4f(1, 0, 0, 0.5);
   glutSolidSphere(0.25, 30, 30);
 
   glTranslatef(0.5, 0, 0);
