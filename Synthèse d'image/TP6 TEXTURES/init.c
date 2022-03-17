@@ -32,7 +32,7 @@ int notre_init(int argc, char** argv, void (*Modelisation)()){
     glutSpecialFunc(&touche_speciale);
     glClearColor(0.0,0.0,0.0,0.0);
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_CULL_FACE);
+    //glEnable(GL_CULL_FACE);
 
     glEnable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);

@@ -3,4 +3,4 @@
 #include <math.h>
 #include <GL/gl.h>
 
-void creerPlaymobile();
+void creerPlaymobil();

@@ -6,11 +6,9 @@ extern GLfloat yrot;
 void touche(unsigned char key, int x, int y) 
 {
   switch(key){
-
     case ESCAPE :
       exit(1);
   }
-
 }
 
 void touche_speciale(int key, int x, int y) 

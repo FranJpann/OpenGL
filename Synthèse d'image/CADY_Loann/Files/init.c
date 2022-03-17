@@ -2,8 +2,10 @@
 #include "actions.h"
 
 int window = 0;
-GLuint blend = 0;
-GLuint lumiere = 0;
+
+GLfloat diff_et_spec[4] = { 0, 0, 0, 0 };
+GLfloat ambiente[4] = {0.4, 0.4, 0.4, 0};
+GLfloat position[4] = {0.0, 0.0, 0.0, 0.0};
 
 GLvoid Redimensionne(GLsizei width, GLsizei height){
 	glViewport(0, 0, width, height);
@@ -16,7 +18,7 @@ GLvoid Redimensionne(GLsizei width, GLsizei height){
 int notre_init(int argc, char** argv, void (*Modelisation)()){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-	glutInitWindowSize(640, 400);
+	glutInitWindowSize(1000, 1000);
 	glutInitWindowPosition(0, 0);
 	window = glutCreateWindow("OpenGL");
 	glutDisplayFunc(Modelisation);
@@ -25,6 +27,18 @@ int notre_init(int argc, char** argv, void (*Modelisation)()){
 	glutKeyboardFunc(&touche);
 	glutSpecialFunc(&touche_speciale);
 	glClearColor(0.0 , 0.0 , 0.0 , 0.0);
+
+	glEnable(GL_DEPTH_TEST);
+    //glEnable(GL_CULL_FACE);
+
+    glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_LIGHT0);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, ambiente);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, diff_et_spec);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, diff_et_spec);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambiente);
+
 	glutMainLoop();
 	return 1;
 }
