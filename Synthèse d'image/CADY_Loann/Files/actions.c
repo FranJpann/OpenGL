@@ -1,5 +1,8 @@
 #include "actions.h"
 
+extern GLfloat xcam;
+extern GLfloat ycam;
+extern GLfloat zcam;
 extern GLfloat xrot;
 extern GLfloat yrot;
 

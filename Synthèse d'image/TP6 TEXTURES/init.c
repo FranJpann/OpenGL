@@ -1,5 +1,6 @@
 #include "init.h"
 #include "actions.h"
+#include "ppm.h"
 
 int window = 0;
 GLuint blend = 0;
@@ -7,7 +8,7 @@ GLuint lumiere = 0;
 extern int temps;
 
 GLfloat diff_et_spec[4] = { 0.5, 0.5, 0.5, 0 };
-GLfloat ambiente[4] = {0.3, 0.3, 0.3, 0};
+GLfloat ambiente[4] = {0.1, 0.1, 0.1, 0};
 GLfloat position[4] = {0.0, 0.0, 0.0, 0.0};
 
 GLvoid Redimensionne(GLsizei width, GLsizei height){

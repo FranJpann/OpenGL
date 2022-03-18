@@ -11,9 +11,7 @@ GLvoid Modelisation()
 {
   VM_init();
 
-  writePpm("Damier.ppm", "Damier.ppm");
-
-  TEXTURE_STRUCT * text = readPpm("Damier.ppm");
+  TEXTURE_STRUCT * text = readPpm("mat.ppm");
 
   GLuint texture;
   glGenTextures(1, &texture);
@@ -41,7 +39,7 @@ GLvoid Modelisation()
 
     glTexCoord2f(1, 1);
     glVertex3f(2, 2, 0);
-
+    
     glTexCoord2f(0, 1);
     glVertex3f(-2, 2, 0);
   glEnd();

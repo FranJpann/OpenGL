@@ -4,7 +4,7 @@
 int window = 0;
 
 GLfloat diff_et_spec[4] = { 0, 0, 0, 0 };
-GLfloat ambiente[4] = {0.4, 0.4, 0.4, 0};
+GLfloat ambiente[4] = {0.3, 0.3, 0.3, 0};
 GLfloat position[4] = {0.0, 0.0, 0.0, 0.0};
 
 GLvoid Redimensionne(GLsizei width, GLsizei height){
