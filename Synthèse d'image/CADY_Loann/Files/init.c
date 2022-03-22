@@ -3,9 +3,9 @@
 
 int window = 0;
 
-GLfloat diff_et_spec[4] = { 0, 0, 0, 0 };
-GLfloat ambiente[4] = {0.3, 0.3, 0.3, 0};
-GLfloat position[4] = {0.0, 0.0, 0.0, 0.0};
+GLfloat position[4] = {0, 0, 0, 1};
+GLfloat diff_et_spec[4] = { 0.5, 0.5, 0.5, 1};
+GLfloat ambiente[4] = {0.4, 0.4, 0.4, 1};
 
 GLvoid Redimensionne(GLsizei width, GLsizei height){
 	glViewport(0, 0, width, height);
@@ -29,14 +29,14 @@ int notre_init(int argc, char** argv, void (*Modelisation)()){
 	glClearColor(0.0 , 0.0 , 0.0 , 0.0);
 
 	glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_CULL_FACE);
 
     glEnable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHT0);
-    glLightfv(GL_LIGHT0, GL_AMBIENT, ambiente);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, diff_et_spec);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, diff_et_spec);
+    //glEnable(GL_LIGHT0);
+    //glLightfv(GL_LIGHT0, GL_DIFFUSE, diff_et_spec);
+    //glLightfv(GL_LIGHT0, GL_SPECULAR, diff_et_spec);
+	//glLightfv(GL_LIGHT0, GL_POSITION, position);
+
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambiente);
 
 	glutMainLoop();

@@ -29,7 +29,7 @@ TEXTURE_STRUCT * readPpm(char *ppmFileName)
 		getchar();
 		return NULL;
 	}
-	printf("%s\n", buffer);
+	//printf("%s\n", buffer);
 	//Allocation of the pointer to the TEXTURE_STRUCT variable
 	if ((texture = (TEXTURE_STRUCT *)malloc(sizeof(TEXTURE_STRUCT))) == NULL)
 	{
@@ -93,7 +93,7 @@ TEXTURE_STRUCT * readPpm(char *ppmFileName)
 	buffer[i] = '\0';
 	pixelFormat = atoi(buffer);
 	pixelFormat++;
-	printf ("%d %d %d\n", texture->width, texture->height, pixelFormat);
+	//printf ("%d %d %d\n", texture->width, texture->height, pixelFormat);
 	//Finding the number of bits fitting the pixel format, if available
 	if (pixelFormat <= 0)
 	{
@@ -131,7 +131,7 @@ TEXTURE_STRUCT * readPpm(char *ppmFileName)
 	}
 	// fread(texture->data, sizeof(unsigned char), 3*texture->width*texture->height, file);
 	
-	printf ("(OK) : The file %s was correctly parsed and uploaded in memory [function readPpm]\n", ppmFileName);
+	//printf ("(OK) : The file %s was correctly parsed and uploaded in memory [function readPpm]\n", ppmFileName);
 	//printf ("%d %d %d\n", texture->width, texture->height, texture->bpp);getchar();getchar();
 
 	texture->width = 256;

@@ -1,9 +1,6 @@
 #include "init.h"
 #include "actions.h"
 #include "VM_init.c"
-#include "playmobil.h"
-#include "texture.h"
-#include "ppm.h"
 
 extern GLfloat xcam;
 extern GLfloat ycam;
@@ -16,33 +13,16 @@ extern GLuint texture[];
 GLvoid Modelisation()
 {
   VM_init();
-  loadTexture();
 
-  /*    Sol   */
-  glEnable(GL_TEXTURE_2D);
-  glFrontFace(GL_CW);
-  glBindTexture(GL_TEXTURE_2D, texture[0]);
   glBegin(GL_QUADS);
     GLfloat taille = 30;
-
-    glTexCoord2f(0, 0);
     glVertex3f(taille, -3, taille);
-
-    glTexCoord2f(10, 0);
     glVertex3f(-taille, -3, taille);
-
-    glTexCoord2f(10, 10);
     glVertex3f(-taille, -3, -taille);
-
-    glTexCoord2f(0, 10);
     glVertex3f(taille, -3, -taille);
   glEnd();
-  glBindTexture(GL_TEXTURE_2D, 0);
-
-  /*    Playmobil   */
-  glFrontFace(GL_CCW);
-  creerPlaymobil();
   
+  axes();
   glutSwapBuffers();
 }
 
