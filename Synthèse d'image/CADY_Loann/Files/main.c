@@ -11,16 +11,17 @@ extern GLfloat zcam;
 extern GLfloat xrot;
 extern GLfloat yrot;
 
+extern GLfloat coordsPM[];
+
 extern GLuint texture[];
 
 GLvoid Modelisation()
 {
   VM_init();
-  loadTexture();
-
+  glColor3f(1, 1, 1);
+  
   /*    Sol   */
   glEnable(GL_TEXTURE_2D);
-  glFrontFace(GL_CW);
   glBindTexture(GL_TEXTURE_2D, texture[0]);
   glBegin(GL_QUADS);
     GLfloat taille = 30;
@@ -29,18 +30,17 @@ GLvoid Modelisation()
     glVertex3f(taille, -3, taille);
 
     glTexCoord2f(10, 0);
-    glVertex3f(-taille, -3, taille);
+    glVertex3f(taille, -3, -taille);
 
     glTexCoord2f(10, 10);
     glVertex3f(-taille, -3, -taille);
 
     glTexCoord2f(0, 10);
-    glVertex3f(taille, -3, -taille);
+    glVertex3f(-taille, -3, taille);
   glEnd();
   glBindTexture(GL_TEXTURE_2D, 0);
 
   /*    Playmobil   */
-  glFrontFace(GL_CCW);
   creerPlaymobil();
   
   glutSwapBuffers();

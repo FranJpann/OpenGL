@@ -131,7 +131,7 @@ TEXTURE_STRUCT * readPpm(char *ppmFileName)
 	}
 	// fread(texture->data, sizeof(unsigned char), 3*texture->width*texture->height, file);
 	
-	//printf ("(OK) : The file %s was correctly parsed and uploaded in memory [function readPpm]\n", ppmFileName);
+	printf ("(OK) : The file %s was correctly parsed and uploaded in memory [function readPpm]\n", ppmFileName);
 	//printf ("%d %d %d\n", texture->width, texture->height, texture->bpp);getchar();getchar();
 
 	texture->width = 256;

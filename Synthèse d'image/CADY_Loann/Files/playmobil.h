@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <GL/gl.h>
 
+GLfloat coordsPM[3];
+
 struct material {
   GLfloat ambient[4];
   GLfloat diffuse[4];
@@ -12,10 +14,9 @@ struct material {
 struct cube {
   GLfloat sommets[8][3];
   int faces[6][4];
-  GLfloat faceTexture[4][2];
-  struct material matiere;
+  GLfloat couleur[6][3];
 };
 
-struct cube creer_corps(GLfloat taille);
-void rendu_cube_texture(struct cube c, GLuint text);
+struct cube creer_cube();
+void rendu_cube(struct cube c);
 void creerPlaymobil();
