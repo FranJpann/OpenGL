@@ -5,9 +5,8 @@
 int window = 0;
 
 GLuint texture[2];
-GLfloat position[4] = {2, 0, 0, 1};
 GLfloat diff_et_spec[4] = { 0.5, 0.5, 0.5, 1};
-GLfloat ambiente[4] = {0.4, 0.4, 0.4, 1};
+GLfloat ambiente[4] = {0.7, 0.7, 0.7, 1};
 
 GLvoid Redimensionne(GLsizei width, GLsizei height){
 	glViewport(0, 0, width, height);
@@ -38,7 +37,6 @@ int notre_init(int argc, char** argv, void (*Modelisation)()){
     glEnable(GL_LIGHT0);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, diff_et_spec);
     glLightfv(GL_LIGHT0, GL_SPECULAR, diff_et_spec);
-	glLightfv(GL_LIGHT0, GL_POSITION, position);
 
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambiente);
 

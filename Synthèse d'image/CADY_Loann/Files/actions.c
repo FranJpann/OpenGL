@@ -6,13 +6,15 @@ extern GLfloat zcam;
 extern GLfloat xrot;
 extern GLfloat yrot;
 
-extern GLfloat a;
+extern GLfloat mainRotate;
 
 void touche(unsigned char key, int x, int y) 
 {
   switch(key){
     case ESCAPE :
       exit(1);
+    case TOUCHE_MIN_R :
+      mainRotate += 20;
   }
 }
 
@@ -29,11 +31,11 @@ void touche_speciale(int key, int x, int y)
       break;
 
     case GLUT_KEY_LEFT :
-      yrot += 20.0;
+      xrot += 20.0;
       break;
 
     case GLUT_KEY_RIGHT :
-      yrot -= 20.0;
+      xrot -= 20.0;
       break;
   }
 }

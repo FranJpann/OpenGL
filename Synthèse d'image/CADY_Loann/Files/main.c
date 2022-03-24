@@ -20,6 +20,9 @@ GLvoid Modelisation()
   VM_init();
   glColor3f(1, 1, 1);
   
+  GLfloat position[4] = {2, 0, 0, 1};
+  glLightfv(GL_LIGHT0, GL_POSITION, position);
+
   /*    Sol   */
   glEnable(GL_TEXTURE_2D);
   glBindTexture(GL_TEXTURE_2D, texture[0]);
