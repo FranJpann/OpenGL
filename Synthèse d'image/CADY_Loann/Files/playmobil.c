@@ -32,16 +32,12 @@ void rendu_cube(struct cube c){
 }
 
 void creerPlaymobil(){
-    glEnable(GL_CULL_FACE);
       //Corps
-      
       glPushMatrix();
       {
-        glScalef(0.9, 0.9, 0.9);
         glColor3f(0, 0, 1);
-        glScalef(0.3, 0.4, 0.15);
+        glScalef(0.27, 0.36, 0.135);
         rendu_cube(creer_cube());
-        glColor3f(1, 1, 1);
       }glPopMatrix();
 
       //Short entrejambe
@@ -51,14 +47,13 @@ void creerPlaymobil(){
         glScalef(0.2, 0.2, 0.06);
         glTranslatef(0, -1, 0);
         rendu_cube(creer_cube());
-        glColor3f(1, 1, 1);
       }glPopMatrix();
 
       //Jambes
       glPushMatrix();
       {
+        glColor3f(0.75, 0.55, 0.55);
         glScalef(0.07, 0.35, 0.07);
-
         glTranslatef(1, -1, 0);
         rendu_cube(creer_cube());
 
@@ -68,7 +63,6 @@ void creerPlaymobil(){
           glTranslatef(0, 0.25, 0);
           glScalef(1.4, 0.5, 1.4);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
         //premier pied
@@ -78,9 +72,9 @@ void creerPlaymobil(){
           glTranslatef(0, -0.60, 0.2);
           glScalef(1.2, 0.15, 1.5);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
+        glColor3f(0.75, 0.55, 0.55);
         glTranslatef(-2, 0, 0);
         rendu_cube(creer_cube());
 
@@ -90,7 +84,6 @@ void creerPlaymobil(){
           glTranslatef(0, 0.25, 0);
           glScalef(1.4, 0.5, 1.4);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
         //Deuxieme pied
@@ -100,7 +93,6 @@ void creerPlaymobil(){
           glTranslatef(0, -0.60, 0.2);
           glScalef(1.2, 0.15, 1.5);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
       }glPopMatrix();
@@ -115,19 +107,21 @@ void creerPlaymobil(){
 
         glPushMatrix();
         {
+          glColor3f(0.75, 0.55, 0.55);
           glScalef(0.12, 0.45, 0.12);
           rendu_cube(creer_cube());
+
           glColor3f(0, 0, 1);
           glTranslatef(0, 0.30, 0);
           glScalef(1.1, 0.5, 1.1);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
         glTranslatef(0, -0.25, 0);
 
         glPushMatrix();
         {
+          glColor3f(0.75, 0.55, 0.55);
           glScalef(0.06, 0.045, 0.06);
           rendu_cube(creer_cube());
         }glPopMatrix();
@@ -175,13 +169,13 @@ void creerPlaymobil(){
           glTranslatef(0, 0.30, 0);
           glScalef(1.1, 0.5, 1.1);
           rendu_cube(creer_cube());
-          glColor3f(1, 1, 1);
         }glPopMatrix();
 
         glTranslatef(0, -0.25, 0);
 
         glPushMatrix();
         {
+          glColor3f(0.75, 0.55, 0.55);
           glScalef(0.06, 0.045, 0.06);
           rendu_cube(creer_cube());
         }glPopMatrix();
@@ -215,6 +209,13 @@ void creerPlaymobil(){
 
       //tête
       
+      glPushMatrix();
+      {
+        glTranslatef(0, 0.2, 0);
+        glScalef(0.07, 0.07, 0.07);
+        rendu_cube(creer_cube());
+        glTranslatef(0, 2, 0);
+        glutSolidSphere(2, 20, 20);
+      }glPopMatrix();
 
-    glDisable(GL_CULL_FACE);
 }
